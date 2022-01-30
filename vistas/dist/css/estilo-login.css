@@ -1,0 +1,59 @@
+/* ------------------------------------ DISEÑO DEL LOGIN -------------------------------------------*/
+
+/* General*/
+body {
+    padding: 10% 0 0;
+    margin: 0 auto 100px;
+    position: relative;
+    text-align: center;
+
+}
+
+/* Input Forms*/
+input[type="text"], input[type="password"]{
+  outline: none;
+  padding: 18px;
+  display: block;
+  width: 360px;
+  border-radius: 3px;
+  border: 1px solid #eee;
+  margin: 25px auto;
+}
+
+
+input[type="submit"] {
+
+  padding: 15px;
+  color: #fff;
+  background: #F0B27A;
+
+  width: 360px;
+  margin: 25px auto;
+  margin-top: 0;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color:#F0B27A;
+
+}
+
+/* Header */
+header {
+  border-bottom: 2px solid #eee;
+  padding: 20px 0;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+header a {
+  text-decoration: none;
+  color: #333;
+}
+
+img{
+display:block;
+margin:auto;
+}

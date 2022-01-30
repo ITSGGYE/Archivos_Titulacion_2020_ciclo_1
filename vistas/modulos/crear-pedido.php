@@ -1,0 +1,453 @@
+<?php
+
+if($_SESSION["perfil"] == "Jefe de bodega"){
+
+  echo '<script>
+
+    window.location = "inicio";
+
+  </script>';
+
+  return;
+
+}
+
+?>
+
+<div class="content-wrapper">
+
+  <section class="content-header">
+    
+    <h1>
+      
+      Crear pedido
+    
+    </h1>
+
+    <ol class="breadcrumb">
+      
+      <li><a href="#">Inicio</a></li>
+      
+      <li class="active">Crear pedido</li>
+    
+    </ol>
+
+  </section>
+
+  <section class="content">
+
+    <div class="row">
+
+      <!--=====================================
+      EL FORMULARIO
+      ======================================-->
+      
+      <div class="col-lg-5 col-xs-12">
+        
+        <div class="box box-success">
+          
+          <div class="box-header with-border"></div>
+
+          <form role="form" method="post" class="formularioPedido">
+
+            <div class="box-body">
+  
+              <div class="box">
+
+                <!--=====================================
+                ENTRADA DE LA SECRETARIA
+                ======================================-->
+            
+                <div class="form-group">
+                
+                  <div class="input-group">
+                    
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+
+                    <input type="text" class="form-control" id="nuevoSecretaria" value="<?php echo $_SESSION["nombre"]; ?>" readonly>
+
+                    <input type="hidden" name="idSecretaria" value="<?php echo $_SESSION["id"]; ?>">
+
+                  </div>
+
+                </div> 
+
+                <!--=====================================
+                ENTRADA DEL CÓDIGO
+                ======================================--> 
+
+                <div class="form-group">
+                  
+                  <div class="input-group">
+                    
+                    <span class="input-group-addon"><i class="fa fa-key"></i></span>
+
+                    <?php
+
+                    $item = null;
+                    $valor = null;
+
+                    $pedidos = ControladorPedidos::ctrMostrarPedidos($item, $valor);
+
+                    if(!$pedidos){
+
+                      echo '<input type="text" class="form-control" id="nuevoPedido" name="nuevoPedido" value="10001" readonly>';
+                  
+
+                    }else{
+
+                      foreach ($pedidos as $key => $value) {
+                        
+                        
+                      
+                      }
+
+                      $codigo = $value["codigo"] + 1;
+
+
+
+                      echo '<input type="text" class="form-control" id="nuevoPedidos" name="nuevoPedido" value="'.$codigo.'" readonly>';
+                  
+
+                    }
+
+                    ?>
+                    
+                    
+                  </div>
+                
+                </div>
+
+                <!--=====================================
+                ENTRADA DE LA IGLESIA 
+                ======================================--> 
+
+                <div class="form-group">
+                  
+                  <div class="input-group">
+                    
+                    <span class="input-group-addon"><i class="fa fa-users"></i></span>
+                    
+                    <select class="form-control" id="seleccionarIglesia" name="seleccionarIglesia" required>
+
+                    <option value="">Seleccionar iglesia</option>
+
+                    <?php
+
+                      $item = null;
+                      $valor = null;
+
+                      $categorias = ControladorIglesias::ctrMostrarIglesias($item, $valor);
+
+                       foreach ($categorias as $key => $value) {
+
+                         echo '<option value="'.$value["id"].'">'.$value["nombre"].'</option>';
+
+                       }
+
+                    ?>
+
+                    </select>
+                    
+                    <span class="input-group-addon"><button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalAgregarIglesia" data-dismiss="modal">Agregar iglesia</button></span>
+                  
+                  </div>
+                
+                </div>
+
+                <!--=====================================
+                ENTRADA PARA AGREGAR PRODUCTO
+                ======================================--> 
+
+                <div class="form-group row nuevoProducto">
+
+                
+
+                </div>
+
+                <input type="hidden" id="listaProductos" name="listaProductos">
+
+                <!--=====================================
+                BOTÓN PARA AGREGAR PRODUCTO
+                ======================================-->
+
+                <button type="button" class="btn btn-default hidden-lg btnAgregarProducto">Agregar producto</button>
+
+                <hr>
+
+                <div class="row">
+
+                  <!--=====================================
+                  ENTRADA IMPUESTOS Y TOTAL
+                  ======================================-->
+                  
+                  <div class="col-xs-8 pull-right">
+                    
+                    <table class="table">
+
+                      <thead>
+
+                        <tr>
+                          <th>Impuesto</th>
+                          <th>Total</th>      
+                        </tr>
+
+                      </thead>
+
+                      <tbody>
+                      
+                        <tr>
+                          
+                          <td style="width: 50%">
+                            
+                            <div class="input-group">
+                           
+                              <input type="number" class="form-control input-lg" min="0" id="nuevoImpuestoPedido" name="nuevoImpuestoPedido" placeholder="0" required>
+
+                               <input type="hidden" name="nuevoPrecioImpuesto" id="nuevoPrecioImpuesto" required>
+
+                               <input type="hidden" name="nuevoPrecioNeto" id="nuevoPrecioNeto" required>
+
+                              <span class="input-group-addon"><i class="fa fa-percent"></i></span>
+                        
+                            </div>
+
+                          </td>
+
+                           <td style="width: 50%">
+                            
+                            <div class="input-group">
+                           
+                              <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+
+                              <input type="text" class="form-control input-lg" id="nuevoTotalPedido" name="nuevoTotalPedido" total="" placeholder="00000" readonly required>
+
+                              <input type="hidden" name="totalPedido" id="totalPedido">
+                              
+                        
+                            </div>
+
+                          </td>
+
+                        </tr>
+
+                      </tbody>
+
+                    </table>
+
+                  </div>
+
+                </div>
+
+                <hr>
+
+                <!--=====================================
+                ENTRADA MÉTODO DE PAGO
+                ======================================-->
+
+                <div class="form-group row">
+                  
+                  <div class="col-xs-6" style="padding-right:0px">
+                    
+                     <div class="input-group">
+                  
+                      <select class="form-control" id="nuevoMetodoPago" name="nuevoMetodoPago" required>
+                        <option value="">Seleccione método de pago</option>
+                        <option value="Efectivo">Efectivo</option>         
+                      </select>    
+
+                    </div>
+
+                  </div>
+
+                  <div class="cajasMetodoPago"></div>
+
+                  <input type="hidden" id="listaMetodoPago" name="listaMetodoPago">
+
+                </div>
+
+                <br>
+      
+              </div>
+
+          </div>
+
+          <div class="box-footer">
+
+            <button type="submit" class="btn btn-primary pull-right">Guardar pedido</button>
+
+          </div>
+
+        </form>
+
+        <?php
+
+          $guardarPedido = new ControladorPedidos();
+          $guardarPedido-> ctrCrearPedido();
+          
+        ?>
+
+        </div>
+            
+      </div>
+
+      <!--=====================================
+      LA TABLA DE PRODUCTOS
+      ======================================-->
+
+      <div class="col-lg-7 hidden-md hidden-sm hidden-xs">
+        
+        <div class="box box-warning">
+
+          <div class="box-header with-border"></div>
+
+          <div class="box-body">
+            
+            <table class="table table-bordered table-striped dt-responsive tablaPedidos">
+              
+               <thead>
+
+                 <tr>
+                  <th style="width: 10px">#</th>
+                  <th>Imagen</th>
+                  <th>Código</th>
+                  <th>Descripcion</th>
+                  <th>Stock</th>
+                  <th>Acciones</th>
+                </tr>
+
+              </thead>
+
+            </table>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+   
+  </section>
+
+</div>
+
+<!--=====================================
+MODAL AGREGAR IGLESIA
+======================================-->
+
+<div id="modalAgregarIglesia" class="modal fade" role="dialog">
+  
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+
+      <form role="form" method="post">
+
+        <!--=====================================
+        CABEZA DEL MODAL
+        ======================================-->
+
+        <div class="modal-header" style="background:#FFB74D; color:white">
+
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+          <h4 class="modal-title">Agregar iglesia</h4>
+
+        </div>
+
+        <!--=====================================
+        CUERPO DEL MODAL
+        ======================================-->
+
+        <div class="modal-body">
+
+          <div class="box-body">
+
+            <!-- ENTRADA PARA EL NOMBRE -->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevaIglesia" placeholder="Ingresar nombre" required>
+
+              </div>
+
+            </div>
+
+          
+            <!-- ENTRADA PARA EL EMAIL -->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-envelope"></i></span> 
+
+                <input type="email" class="form-control input-lg" name="nuevoEmail" placeholder="Ingresar email" required>
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA EL TELÉFONO -->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoTelefono" placeholder="Ingresar teléfono" data-inputmask="'mask':'(999) 999-9999'" data-mask required>
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA LA DIRECCIÓN -->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevaDireccion" placeholder="Ingresar dirección" required>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!--=====================================
+        PIE DEL MODAL
+        ======================================-->
+
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+
+          <button type="submit" class="btn btn-primary">Guardar iglesia</button>
+
+        </div>
+
+      </form>
+
+      <?php
+
+        $crearIglesia = new ControladorIglesias();
+        $crearIglesia -> ctrCrearIglesia();
+
+      ?>
+
+    </div>
+
+  </div>
+
+</div>
