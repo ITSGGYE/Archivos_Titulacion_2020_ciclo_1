@@ -1,0 +1,345 @@
+[
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 1,
+    "fields": {
+      "id_materias_afines": "1",
+      "tipo": "matematica",
+      "nombre": "Matemáticas Elementales"
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 2,
+    "fields": {
+      "id_materias_afines": "2",
+      "tipo": "matematica",
+      "nombre": "Aritmética"
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 3,
+    "fields": {
+      "id_materias_afines": "3",
+      "tipo": "matematica",
+      "nombre": "Preálgebra"
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 4,
+    "fields": {
+      "id_materias_afines": "4",
+      "tipo": "matematica",
+      "nombre": "Fundamentos de álbegra"
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 5,
+    "fields": {
+      "id_materias_afines": "5",
+      "tipo": "matematica",
+      "nombre": "Geometría básica"
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 6,
+    "fields": {
+      "id_materias_afines": "6",
+      "tipo": "matematica",
+      "nombre": "Geometría"
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 7,
+    "fields": {
+      "id_materias_afines": "7",
+      "tipo": "matematica",
+      "nombre": "Trigonometría"
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 8,
+    "fields": {
+      "id_materias_afines": "8",
+      "tipo": "matematica",
+      "nombre": "Precálculo"
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 9,
+    "fields": {
+      "id_materias_afines": "9",
+      "tipo": "matematica",
+      "nombre": "Probabilidad y estadística"
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 10,
+    "fields": {
+      "id_materias_afines": "10",
+      "tipo": "matematica",
+      "nombre": "Cálculo I"
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 11,
+    "fields": {
+      "id_materias_afines": "11",
+      "tipo": "matematica",
+      "nombre": "Cálculo II"
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 12,
+    "fields": {
+      "id_materias_afines": "12",
+      "tipo": "matematica",
+      "nombre": "Estadística avanzada"
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 13,
+    "fields": {
+      "id_materias_afines": "13",
+      "tipo": "matematica",
+      "nombre": "Ecuaciones diferenciales"
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 14,
+    "fields": {
+      "id_materias_afines": "14",
+      "tipo": "matematica",
+      "nombre": "Álgebra lineal"
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 15,
+    "fields": {
+      "id_materias_afines": "15",
+      "tipo": "ciencia",
+      "nombre": "Biología"
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 16,
+    "fields": {
+      "id_materias_afines": "16",
+      "tipo": "ciencia",
+      "nombre": "Química"
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 17,
+    "fields": {
+      "id_materias_afines": "17",
+      "tipo": "ciencia",
+      "nombre": "Física"
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 18,
+    "fields": {
+      "id_materias_afines": "18",
+      "tipo": "ciencia",
+      "nombre": "Ingeniería eléctrica"
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 19,
+    "fields": {
+      "id_materias_afines": "19",
+      "tipo": "economia",
+      "nombre": "Microeconomía"
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 20,
+    "fields": {
+      "id_materias_afines": "20",
+      "tipo": "economia",
+      "nombre": "Macroeconomía"
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 21,
+    "fields": {
+      "id_materias_afines": "21",
+      "tipo": "economia",
+      "nombre": "Mercados Financieros y de capitales"
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 22,
+    "fields": {
+      "id_materias_afines": "22",
+      "tipo": "computacion",
+      "nombre": "Informática básica"
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 23,
+    "fields": {
+      "id_materias_afines": "23",
+      "tipo": "computacion",
+      "nombre": "Utilitarios básicos"
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 24,
+    "fields": {
+      "id_materias_afines": "24",
+      "tipo": "computacion",
+      "nombre": "Windows"
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 25,
+    "fields": {
+      "id_materias_afines": "25",
+      "tipo": "computacion",
+      "nombre": "Linux"
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 26,
+    "fields": {
+      "id_materias_afines": "26",
+      "tipo": "computacion",
+      "nombre": "Programación en Java"
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 27,
+    "fields": {
+      "id_materias_afines": "27",
+      "tipo": "computacion",
+      "nombre": "Programación en Python"
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 28,
+    "fields": {
+      "id_materias_afines": "28",
+      "tipo": "computacion",
+      "nombre": "Programación Web "
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 29,
+    "fields": {
+      "id_materias_afines": "29",
+      "tipo": "computacion",
+      "nombre": "Programación Android "
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 30,
+    "fields": {
+      "id_materias_afines": "30",
+      "tipo": "computacion",
+      "nombre": "Programación IOS"
+    }
+  },
+  {
+    "model": "tutor.MateriasAfines",
+    "pk": 31,
+    "fields": {
+      "id_materias_afines": "31",
+      "tipo": "computacion",
+      "nombre": "Programación móvil"
+    }
+  },
+  {
+    "model": "seguridad.Ciudad",
+    "pk": 1,
+    "fields": {
+      "id_ciudad": "1",
+      "nombre": "Cuenca"
+    }
+  },
+  {
+    "model": "seguridad.Ciudad",
+    "pk": 2,
+    "fields": {
+      "id_ciudad": "2",
+      "nombre": "Quito"
+    }
+  },
+  {
+    "model": "seguridad.Ciudad",
+    "pk": 3,
+    "fields": {
+      "id_ciudad": "3",
+      "nombre": "Guayaquil"
+    }
+  },
+  {
+    "model": "seguridad.Ciudad",
+    "pk": 4,
+    "fields": {
+      "id_ciudad": "4",
+      "nombre": "Ambato"
+    }
+  },
+  {
+    "model": "seguridad.Pais",
+    "pk": 1,
+    "fields": {
+      "id_pais": "1",
+      "nombre": "Ecuador"
+    }
+  },
+  {
+    "model": "seguridad.Pais",
+    "pk": 2,
+    "fields": {
+      "id_pais": "2",
+      "nombre": "Mexico"
+    }
+  },
+  {
+    "model": "seguridad.Pais",
+    "pk": 3,
+    "fields": {
+      "id_pais": "3",
+      "nombre": "Colombia"
+    }
+  },
+  {
+    "model": "seguridad.Pais",
+    "pk": 4,
+    "fields": {
+      "id_pais": "4",
+      "nombre": "Venezuela"
+    }
+  }
+]

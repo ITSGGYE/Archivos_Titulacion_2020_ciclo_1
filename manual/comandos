@@ -1,0 +1,50 @@
+https://docs.djangoproject.com/es/3.0/intro/tutorial02/
+
+Frontend instalacion:
+
+1.-Crear la carpeta node_modules que contiene todas las librerias y dependencias para ejecutar el proyecto en vue.js:
+
+ npm install 
+
+2.- Instalar librerias nesecarias:
+
+ npm install axios
+ npm i vue2-leaflet
+ npm install sweetalert
+ npm install vue-session
+ npm install vue-star-rating
+
+3.- Ejecutar proyecto: npm run dev
+
+
+Backend instalacion y ejecucion:
+
+1.- Ubicarse donde se encuentra requirements.txt y ejecutar el siguiente comando: 
+
+- para python 3: python3 -m pip install -r requirements.txt
+-si utiliza python 2.7: pip install -r requirements.txt
+
+2.- crear migracion:
+
+	Crear Migraciones: python3 -m manage makemigrations
+	Para python 2: python manage.py makemigrations
+
+3.- Convertir en tablas las migraciones:
+
+	Migrar modelos: python3 -m manage migrate
+	en python 2.7: python manage.py migrate
+
+4.- Cargar la informacion de los fixtures.json a la base de datos:
+
+	python3 -m manage loaddata fixtures.json
+	python3 -m manage loaddata fixtures_2.json
+	python manage.py loaddata fixtures.json
+	python manage.py loaddata fixtures_2.json
+
+5.- Ejecutar el proyecto:
+	python manage.py runserver
+
+
+Verificar problemas: python manage.py check
+Shell de comandos: python manage.py shell
+Crear usuario para el django-admin: python manage.py createsuperuser

@@ -1,0 +1,90 @@
+#mapid { height: 100%; width: 100%; background-color: white;}
+
+.map-container-5{
+    overflow:hidden;
+    padding-bottom:35.25%;
+    position:relative;
+    height:0;
+}
+.map-container-5 mapid{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+table{
+    width: 100%;
+}
+
+table td {
+    color: #FB5F3C;
+    text-align: center;
+}
+.cant{
+    font-weight: bold;
+}
+.cant_title{
+    font-weight: bold;
+    font-size: 13px;
+    width: 80%;
+    text-align: center;
+}
+
+.title_teacher{
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+.text-foot{
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.border-right {
+  border-right: 1px solid #dadbda; }
+
+.easypiechart-panel {
+  text-align: center;
+  padding: 1px 0;
+  margin-bottom: 20px;
+    color: #FB5F3C;
+}
+
+.easypiechart {
+  position: relative;
+  text-align: center;
+  width: 120px;
+  height: 120px;
+  margin: 20px auto 10px auto;
+
+}
+
+.easypiechart .percent {
+  display: block;
+  position: absolute;
+  font-size: 26px;
+  top: 38px;
+  width: 120px; }
+
+#easypiechart-green .percent {
+  color: #29c00e; }
+
+#easypiechart-blue .percent {
+  color: #30a5ff; }
+
+#easypiechart-teal .percent {
+  color: #1ebfae; }
+
+#easypiechart-orange .percent {
+  color: #ffb53e; }
+
+#easypiechart-red .percent {
+  color: #ef4040; }
+
+.checked {
+  color: orange;
+}

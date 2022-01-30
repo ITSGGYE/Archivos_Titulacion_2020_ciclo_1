@@ -1,0 +1,37 @@
+{% load crispy_forms_tags %}
+<div class="modal-dialog " role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" class="btn-primary"  id="exampleModalLabel">Editar Educacion</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <form action="{% url 'editar_educacion' object.id_persona %}" method="POST">
+            {% csrf_token %}
+            <div class="modal-body">
+                {{form.universidad|as_crispy_field}}
+                {{form.titulacion|as_crispy_field}}
+                {{form.nota|as_crispy_field}}
+                <div class="form-row">
+                    <div class="col-md-6">
+                        {{form.fecha_inicio|as_crispy_field}}
+                    </div>
+                    <div class="col-md-6">
+                        {{form.fecha_fin|as_crispy_field}}
+                    </div>
+                </div>
+                <br>
+                <div class="form-group d-flex align-items-center justify-content-between">
+                    <div class="custom-control custom-control-solid custom-checkbox">
+                        <input class="custom-control-input small" id="customCheck1" type="checkbox"><label class="custom-control-label mr-3" for="customCheck1">Actualmente en el cargo</a>.</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+        </form>
+    </div>
+</div>

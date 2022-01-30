@@ -1,0 +1,63 @@
+{% extends 'polls/index.html' %}
+{% load static %}
+{% block titulo %} Inicio de sesión Human Mindset  {% endblock titulo %}
+{% load crispy_forms_tags %}
+{% block contenido_principal %}
+        {% load socialaccount %}
+    <body class="bg-primary">
+        <div id="layoutAuthentication">
+            <div id="layoutAuthentication_content">
+                <main>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-5 col-lg-6 col-md-8 col-sm-11">
+                                <div class="card my-5">
+                                    <div class="card-body p-4 text-center">
+                                        <div class="h2 font-weight-bolder mb-3">Inicio de Sesión</div>
+                                        <div class="h2 font-weight-bolder mb-3">HumanMindSet</div>
+                                    </div>
+                                    <hr class="my-0">
+                                    <div class="card-body p-5">
+                                    <!--Mensaje de error de correo y contra incorrectos     -->
+                                        {% if error %}
+                                            <div class="alert alert-danger alert-dismissible" role="alert">
+                                                <button type="button" class="close" data-dismiss = "alert" aria-label = "Close">
+                                                    <span aria-hidden = "true">&times;</span>
+                                                </button>
+                                                <strong>Advertencia: </strong> {{ error }}
+                                            </div>
+                                        {% endif %}
+                                    <!--formulario de inicio de sesion    -->
+                                        <form method="POST" class="block">{% csrf_token %}
+                                            <div class="form-group">
+                                                <label class="text-gray-600 small" for="emailExample">Correo Electrónico*</label>
+                                                <input type="email" name="usu" class="form-control form-control-block" id="id_username" aria-describedby="emailHelp" >
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="text-gray-600 small" for="emailExample">Contraseña*</label>
+                                                <input type="password" name="pass" class="form-control form-control-block" id="id_password" >
+                                            </div>
+                                            <br>
+                                                <div class="row justify-content-center">
+                                                   <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                                                </div>
+                                        </form>
+                                    </div>
+                                    <hr class="my-0">
+                                    <div class="card-body px-5 py-4">
+                                        <div class="row justify-content-center">
+                                            <a href="{% provider_login_url 'google' %}" class="btn btn-google mr-2 my-1"><svg class="bi bi-envelope-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M.05 3.555L8 8.414l7.95-4.859A2 2 0 0014 2H2A2 2 0 00.05 3.555zM16 4.697l-5.875 3.59L16 11.743V4.697zm-.168 8.108L9.157 8.879 8 9.586l-1.157-.707-6.675 3.926A2 2 0 002 14h12a2 2 0 001.832-1.195zM0 11.743l5.875-3.456L0 4.697v7.046z"/></svg><!-- <i class="fab fa-google mr-2"></i> -->&nbsp; Iniciar Sesion Con Gmail </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </body>
+{% endblock contenido_principal %}
+{% block footer %}{% endblock %}
+{% block extrajs %}
+{% endblock extrajs %}

@@ -1,0 +1,86 @@
+<html>
+{% load static %}
+	<head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title> {% block titulo %} HumanMindSet {% endblock titulo %}</title>
+        <link href="{% static "css/styles.css" %}" rel="stylesheet" />
+        <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+         <style type="text/css">
+         	fieldset{
+				border: 1px solid #ddd !important;
+				margin: 0;
+				xmin-width: 0;
+				padding: 10px;
+				position: right;
+				border-radius:4px;
+				background-color:#f5f5f5;
+				padding-left:10px!important;
+			}	
+
+			legend{
+				font-size:14px;
+				font-weight:bold;
+				margin-bottom: 0px;
+				width: 35%;
+				border: 1px solid #ddd;
+				border-radius: 4px;
+				padding: 5px 5px 5px 10px;
+				background-color: #ffffff;
+			}
+
+			#boton {
+                display: inline-block;
+                padding: 0 2px;
+                background: blue;
+                border: 2px outset lightgray;
+                cursor: default;
+            }
+         </style>
+	</head>
+	<body>
+		<div class="card">
+			<div class="card-header bg-verde text-light bg-success">
+				<label>  Human Mind Set </label>
+			</div>
+			<div class="card-body justify-content-center">
+				<center>
+					<img src="{% static 'img/logo_horizontal_human.png' %}" width="400px" alt=""><br>
+					Estimado <strong>{{tutor.id_persona.nombres}}  {{tutor.id_persona.apellidos}}</strong> un estudiante esta interesado en su tutoria. <br> <br>
+				</center>
+				
+				<fieldset>
+                                              
+                        <div class="panel panel-default">
+                               <div class="panel-body">
+                               		<center>
+                               			<img src="{% static 'img/logo_horizontal_human.png' %}" width="300px" alt="">
+                               			<br>
+                               			<label class="h4"> <h4> {{ usuario.id_persona.nombres  }} {{ usuario.id_persona.apellidos }} </h4> </label>
+                               			<br>
+                               			<label class="py-2"> <h4>Materrias que busca: {% for e in estudiante.id_materias_afines.all %}
+                               				{{e.nombre}} 
+                               			{% endfor %} </h4>
+                               			</label>
+                               			<br>
+                               			<a class="boton" type="button"> Mostrar Detalles </a>
+                               		</center>
+                                   
+                               </div>
+                        </div>
+                </fieldset>
+
+
+ 			</div>
+			<div class="card-footer">
+				
+			</div>
+		</div>
+	</body>
+	<footer>
+		
+	</footer>
+</html>

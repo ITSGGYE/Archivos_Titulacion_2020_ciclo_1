@@ -1,0 +1,13 @@
+{% extends 'polls/index.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block titulo %} Listas_tutor {% endblock titulo %}
+{% block contenido_principal %}
+     {% if persona  %}
+         {% for persona in materias %}
+             {{ persona.nombre }}
+         {% endfor %}
+         {% else %}
+
+    {% endif %}
+{% endblock contenido_principal %}
